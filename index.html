@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Rock Paper Scissors Game </title>
+        <link rel="stylesheet" href="css/GameStyles.css">
+    </head> 
+    <body> 
+        <!------------------------------------ Audio/Music/Sound ------------------------------------>
+        <audio id="music" src="audio/ThemeSong.mp3" loop="true" hidden="true" autostart="true"></audio>
+        <button class="musicBtn" id="playBtn">&#x25BA; Play</button>
+        <button class="musicBtn" id="pauseBtn">&#x2590;&#x2590; Pause</button>
+
+        <audio id="rockSound" src="audio/rockSound.mp3"></audio>
+        <audio id="paperSound" src="audio/paperSound.mp3"></audio>
+        <audio id="scissorsSound" src="audio/scissorsSound.mp3"></audio>
+
+        <audio id="winSound" src="audio/winSound.mp3"></audio>
+        <audio id="loseSound" src="audio/loseSound.mp3"></audio>
+        <audio id="tieSound" src="audio/tieSound.mp3"></audio>
+
+        <!--------------- Enter Player Name (MODAL BOX) -------------------->
+        <!--------- The Modal --------->
+        <div id="myModal" class="modal">
+
+        <!-------- Modal Content (Player Name Form Validation) -------->
+        <div class="modalContent">
+            <h3> WELCOME TO... </h3> <h2> ROCK, PAPER, SCISSORS! </h2>
+            <br><h4> Please enter your NAME to begin:</h4>
+            <h5> Your name MUST contain alphabetical letters from A-Z. <br> The field cannot be left blank.</h5><br>
+                <form>
+                    <input class="nameHolder" required="required" type="text" id="nameHolder" name="nameHolder" placeholder="Player Name">
+                        <span class="hint" id="nameHint">Field can ONLY contain alphabetical letters.</span>
+                        <span class="hint" id="blankHint">Field cannot be left blank.</span>
+                    <br><br>
+                    <button class="letsPlayBtn" type="submit" id="letsPlayBtn" name="letsPlayBtn">Let's Play!</button>
+                </form>
+        </div>
+        </div>
+
+        <!----------- 1. Title/Header ------------->
+        <header>
+            <h1> Let's Play ROCK, PAPER, SCISSORS! </h1>
+        </header>
+
+        <!----------- 2. Scoreboard --------------->       
+        <div class="score">
+            <div class="label" id="playerLabel"> Player </div>
+            <div class="label" id="computerLabel"> Computer </div>
+            <span id="playerScore">0</span> - 
+            <span id="computerScore">0</span>
+        </div> 
+
+        <!------------ 3. Welcome and Instructions ------------->
+        <div class="welcome">WELCOME!</div>
+        <div class="intro">
+        <p> 
+            Ever wanted to prove your prowess in Rock, Paper, Scissors? <br> 
+            Need some practice competing in this classic playground game? <br> 
+            Enjoy this interactive Rock, Paper, Scissors game online <br>
+            that matches hand against hand and mind against mind!
+        </p>
+        <br>
+    
+        <div class="howToPlay">HOW TO PLAY</div>
+        <div class="instructions">
+        <p> 
+            Click on either the Rock, Paper, or Scissors picture below to choose your weapon: <br><br>
+            <ul>
+                <li> If you choose ROCK, you will win against Scissors but lose against Paper.</li>
+                <li> If you choose SCISSORS, you will win against Paper but lose against Rock.</li>
+                <li> If you choose PAPER, you will win against Rock but lose against Scissors.</li>
+            </ul><br>
+            Let's see how you do!<br>
+             Don't forget to check your game history at the bottom of the page! 
+        </p>
+        <br>
+
+        <!------------ 4. Player Choice Click-On Pictures (Rock, Paper, or Scissors?) ------------>
+        <div class="chooseWeapon">
+            <p> Choose Your Weapon:</p>
+        </div>
+        
+        <div class="playerOptionsPic">
+            <div class="option"> 
+                <img src="images/Rock.png" alt="Rock" id="Rock" width="110" height="110"></div> 
+            <div class="option"> 
+                <img src="images/Paper.png" alt="Paper" id="Paper" width="120" height="120"></div>
+            <div class="option"> 
+                <img src="images/Scissors.png" alt="Scissors" id="Scissors" width="120" height="120"></div><br><br>
+        </div>
+
+        <!------------ 5. Battle: Player Choice Vs. Computer Choice) ----------------------->
+                
+        <!---- 5.1 Player Choice Outcome (You Chose...) ----------->
+        <span class="youChose"> You Chose: </span>
+        <span class="plyrChoice"></span>
+    
+        <div class ="chosenPic">
+            <img class="chosenImg" width="180" height="180">
+        </div>
+        
+        <!---- 5.2 Computer Choice Outcome (Computer Chose...) ---->
+        <span class="comChose">The Computer Chose: </span>
+        <span class="comChoice"></span>
+
+        <div class ="comChosenPic">
+            <img class="comChosenImg" width="180" height="180">
+        </div>
+        <br>
+
+        <!------------ 6. Final Outcome (Who Won?) ----------------------->
+        <div class="outcome">
+            <p>Can you beat the Computer at Rock, Paper, Scissors? </p>
+        </div> 
+
+        <!------------ 7. Game Stats Table  ----------------------->
+        <h2>Game History</h2><br>
+        <div class="gameStatsTable">
+        <div class="gameStats gameStatsHeading">
+            <div> Round </div>
+            <div> Player Choice </div>
+            <div> Com Choice </div>
+            <div> Result </div>
+        </div>
+        </div> 
+        <div class="rounds"></div>
+
+
+        <script type="text/javascript" src="js/GameJS.js"></script>
+    </body>
+</html>

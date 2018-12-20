@@ -1,0 +1,338 @@
+/*---------- Fonts ------------------*/
+@import url('https://fonts.googleapis.com/css?family=ZCOOL+QingKe+HuangYou');
+
+@font-face {
+    font-family: BebasNeue;
+    src: url(BebasNeue.otf);
+}
+
+/*---------- Audio Buttons ----------*/
+.musicBtn {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 25px;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+.musicBtn:hover {
+background-color: green;
+}
+
+/*---------- Document Body, Header, etc. ----------*/
+* {                              
+    margin: 0;          
+    padding: 0;
+}
+
+body {
+    background: #40bb9f;
+}
+
+header {
+    background: #333f4d;;
+    padding: 30px;
+}
+
+/*---------- Headings h1-h5 ----------*/
+h1 {
+    color: white;
+    text-align: center;
+    font-family: BebasNeue;
+    font-size: 50pt;
+}
+
+h2 {
+    color: black;
+    text-align: center;
+    font-family: BebasNeue;
+    font-size: 50pt;
+}
+
+h3 {
+    color: black;
+    text-align: center;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 30pt;
+}
+
+h4 {
+    color: black;
+    text-align: center;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 20pt;
+}
+
+h5 {
+    color: rgb(150, 150, 150);
+    text-align: center;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 12pt;
+    font-style: italic;
+}
+
+
+/*---------- Scoreboard ----------*/
+.score {
+    border: 7px solid white;
+    border-radius: 25px;
+    width: 450px;
+    height: 100px;
+    margin: 30px auto;
+    color: white;
+    font-family: BebasNeue;
+    font-size: 60pt;
+    text-align: center;
+    padding: 10px 50px;       
+    position: relative;
+}
+
+.label {
+    background: #f9685c;
+    border-radius: 25px;
+    color: white;
+    font-family: BebasNeue;
+    font-size: 30pt;
+    padding: 10px 20px;
+}
+
+            #playerLabel {
+                position: absolute;
+                top: 20px;
+                left: 40px;
+            }
+
+            #computerLabel {
+                position: absolute;
+                top: 20px;
+                right: 10px;
+            }
+
+/*---------- Intro ----------*/
+.welcome {
+    color: #333f4d;
+    font-family: BebasNeue;
+    font-size: 60pt;
+    text-align: center;  
+}
+
+.intro {
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT','Trebuchet MS', sans-serif;
+    font-size: 15pt;
+    text-align: center;  
+}
+
+/*---------- Instructions ----------*/
+.howToPlay {
+    color: white;
+    font-family: BebasNeue;
+    font-size: 50pt;
+    text-align: center;  
+}
+
+.instructions {
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT','Trebuchet MS', sans-serif;
+    font-size: 15pt;
+    text-align: center;  
+}
+
+/*---------- Player Choice Click-On Pictures (Rock, Paper, or Scissors?) ----------*/
+.chooseWeapon {
+    color: #333f4d;
+    font-family: BebasNeue;
+    font-size: 40pt;
+    text-align: center;  
+}
+
+.playerOptionsPic {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.option {
+    border: 10px dashed white; 
+    border-radius: 75px;
+    padding: 10px;
+    margin: 0px 15px;
+    display: inline-block      
+}
+
+.option:hover {                 
+    cursor: pointer;
+    background: green;
+}
+
+/*---- Player Choice Outcome (You Chose...) -----------*/
+.youChose{
+    color: #333f4d;
+    font-family: BebasNeue;
+    font-size: 30pt;
+    text-align: center;
+}
+
+.plyrChoice {
+    color: white; 
+    font-family: BebasNeue;
+    font-size: 60pt;
+    text-align: center;
+    margin-top: 0px;
+}
+
+.chosenImg {
+    display: none;
+}
+
+/*---- Computer Choice Outcome (Computer Chose...) -----------*/
+.comChose{
+    color: white;
+    font-family: BebasNeue;
+    font-size: 30pt;
+    text-align: center;
+    margin-top: 20px;
+}
+.comChoice {
+    color: black; 
+    font-family: BebasNeue;
+    font-size: 60pt;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.comChosenImg {
+    display: none;
+}
+
+/*------------- Final Outcome -----------*/
+.outcome {
+    border: 7px solid white;
+    background-color: #333f4d; 
+    border-radius: 25px;
+    width: 750px;
+    height: 140px;
+    margin: 30px auto;
+    color: white;
+    font-family: 'ZCOOL QingKe HuangYou';
+    font-size: 50pt;
+    text-align: center;
+    margin: 20 auto;
+    padding: 50px;
+    display: inline-block;
+    position: relative;
+}
+
+/*------------- Game Stats Table -----------*/
+.gameStats div{
+	display: inline-block;
+    width: 6em;
+    padding-right: 4px;
+}
+
+.gameStatsHeading {
+    font-weight: bold;
+    color: white; 
+    font-family: BebasNeue;
+    font-size: 25pt;
+	border-bottom: 15px solid black;
+    width: 25em;
+    display: inline-block;
+}
+
+.rounds{
+    color:white;
+    font-size: 30pt;
+    font-family: BebasNeue;
+    display: inline-block;
+    padding-left: 140px;
+
+}
+.comChooses{
+    color:white;
+    font-size: 30pt;
+    font-family: BebasNeue;
+    display: inline-block;
+    width: 6em;
+
+}
+.playerChoice{
+    color:white;
+    font-size: 30pt;
+    font-family: BebasNeue;
+    display: inline-block;
+    width: 6em;
+
+}
+.result{
+    color:yellow;
+    font-size: 30pt;
+    font-family: BebasNeue;
+    display: inline-block;
+    width: 6em;
+
+}
+
+/*--------------------------- Enter Player Name (MODAL BOX) -------------------------*/
+
+/* Modal Template taken from W3Schools - https://www.w3schools.com/howto/howto_css_modals.asp) */
+.modal {
+    display: block; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto;
+    background-color: rgb(0, 0, 0); 
+    background-color: rgba(0,0,0,0.4); 
+}
+    
+/* Modal Box Content */
+.modalContent {
+    background-color: whitesmoke;
+    margin: 15% auto;
+    padding: 40px;
+    border: 3px solid black;
+    width: 50%; 
+    height: 70%; 
+    font-weight: 300;
+    line-height: 1.5;
+    color: #444;
+    text-align: center
+}
+    
+.nameHolder {
+    width: 100x;
+    height: 50px;
+    font-size: 50px;
+    text-align: center
+}
+
+.hint {
+display:none;
+color:red;
+font-size: 15px;
+font-style: italic;
+}   
+
+.letsPlayBtn {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 12px;
+    font-size: 20px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.letsPlayBtn:hover {
+    background-color: white;
+    color: #4CAF50;
+}
