@@ -65,7 +65,7 @@ function runGame(playerChoice) {
     function tie() {
         computerScoreSpan.innerHTML = comScore;
         playerScoreSpan.innerHTML = plyrScore;
-        outcomeDiv.innerHTML = "It'write a TIE!"
+        outcomeDiv.innerHTML = "It's a TIE!";
         var tieSound = document.getElementById("tieSound");
         tieSound.play();
     }
