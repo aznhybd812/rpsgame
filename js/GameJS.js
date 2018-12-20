@@ -30,7 +30,7 @@ pauseB.addEventListener("click", function(evt){
 //--------- Computer generates random choice of "Rock" "Paper" or "Scissors" ------------- 
 function comChoice() {
     var options = ['Rock', 'Paper', 'Scissors'];
-    var randomNum = (Math.floor(Math.random() * (2-0+1) + 0));          // Gets random whole number ranging from 0-2
+    var randomNum = (Math.floor(Math.random() * (2-0+1) + 0)); // Gets random whole number ranging from 0-2
     return options[randomNum];
 }
 
@@ -43,7 +43,22 @@ function runGame(playerChoice) {
     chosenPic.style.display = "inline";
     comChosenPic.src = "images/" + comChooses + ".png";
     comChosenPic.style.display = "inline";
-    var result;
+
+    var result = getResult(playerChoice, comChooses);
+    var resultStr;
+    console.log(result);
+    if (result === 0) {
+        resultStr = "Tie";
+        tie();
+    } else if (result === 1) {
+        resultStr = "Win";
+        win();
+    } else if (result === -1) {
+        resultStr = "Lose";
+        lose();
+    }
+    
+    addNewRow(playerChoice, comChooses, resultStr);
 
     function win() {
         plyrScore++;
@@ -69,47 +84,29 @@ function runGame(playerChoice) {
         var tieSound = document.getElementById("tieSound");
         tieSound.play();
     }
+}
 
-    // 1. If Player and CPU chooses the SAME weapon:
-    if (playerChoice === comChooses){   
-        result = "TIE";                     
-        tie();
-    }
-    
-    // 2. If Player chooses ROCK: 
-    if (playerChoice === "Rock"){                       
-        if (comChooses === "Scissors"){
-            result = "WIN";
-            win();
-        } else {
-            result = "LOSE";
-            lose(); 
+// 1: win, 0: tie, -1: lose
+function getResult(player, comp) {
+    console.log(player);
+    console.log(comp);
+    var result;
+    if (player == comp) {
+        result = 0;
+    } else {
+        switch (player) {
+            case "Paper":
+                result = comp == "Rock" ? 1 : -1;
+                break;
+            case "Rock":
+                result = comp == "Scissors" ? 1 : -1;
+                break;
+            case "Scissors":
+                result = comp == "Paper" ? 1 : -1;
+                break;
         }
     }
-
-    // 3. If Player chooses SCISSORS:
-    if (playerChoice === "Scissors"){                    
-        if (comChooses === "Paper"){
-            result = "WIN";
-            win(); 
-        } else {
-            result = "LOSE";
-            lose(); 
-        }
-    }
-
-    // 4. If Player chooses PAPER:
-    if (playerChoice === "Paper") {                     
-        if (comChooses === "Rock") {
-            result = "WIN";
-            win();
-        } else {
-            result = "LOSE";
-            lose(); 
-        }
-    }
-
-    addNewRow(playerChoice, comChooses, result);
+    return result;
 }
 
 function homePage (){
@@ -139,7 +136,6 @@ function addNewRow(playerChoice, comChooses, result){
     var tableArea = document.querySelector(".gameStatsTable");
     var comChoiceDiv = document.querySelector(".comChoice");
     var plyrChoiceDiv = document.querySelector(".plyrChoice");
-    var comChooses = comChoice();  
     plyrChoiceDiv.innerHTML = playerChoice;
     comChoiceDiv.innerHTML = comChooses;
             
